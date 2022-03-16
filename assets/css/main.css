@@ -1,0 +1,506 @@
+@keyframes blink-animation {
+  0%, 49%, 100% {
+    opacity: 1;
+  }
+  50%, 51%, 99%, 100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blink-animation {
+  0%, 49%, 98% {
+    opacity: 1;
+  }
+  50%, 51%, 99%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 25px;
+}
+
+body {
+  background-color: #f3f4ed;
+  margin: 0;
+  font: 1em "Helvetica", sans-serif;
+}
+
+header,
+footer {
+  background-color: #155263;
+  color: #f3f4ed;
+}
+
+header {
+  padding: 2em 1em;
+}
+
+footer {
+  padding: 1.8em 0.8em;
+  overflow: hidden;
+}
+
+main.text-pretender {
+  text-align: center;
+}
+@media (min-width: 60em) {
+  main.text-pretender {
+    margin: 0 auto;
+    width: 80%;
+    padding: 1em;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-template-rows: 80px 40px 2fr;
+  }
+}
+@media (min-width: 60em) {
+  main.text-pretender h2 {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+}
+@media (min-width: 60em) {
+  main.text-pretender .note {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+  }
+}
+@media (min-width: 60em) {
+  main.text-pretender .phone {
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@media (min-width: 60em) {
+  main.text-pretender .options {
+    grid-column: 2/span 1;
+    grid-row: 3/span 1;
+    border-radius: 15px;
+    justify-self: start;
+  }
+}
+
+h1 {
+  margin: 0;
+  color: #f3f4ed;
+  font: 2.8em "Major Mono Display", monospace;
+}
+
+h2 {
+  color: #ff6f3c;
+  font: 1.8em "Source Code Pro", monospace;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: #ff6f3c;
+  font: 1em "Source Code Pro", monospace;
+  margin: 0;
+  margin-top: 1em;
+}
+
+a {
+  color: #ffc93c;
+  text-decoration: none;
+}
+a:hover {
+  color: #f3f4ed;
+  transition: color 0.2s ease-in;
+}
+
+input,
+textarea {
+  padding: 0.8em;
+}
+
+textarea {
+  width: 95%;
+  border-radius: 20px;
+}
+
+input {
+  border: none;
+  border-radius: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  background-color: #ffc93c;
+  color: #155263;
+  padding: 0.8em;
+  transition: background-color 0.3s ease-out;
+}
+button:hover {
+  background-color: #ff9a3c;
+  transition: background-color 0.3s ease-in;
+}
+
+.blink-type {
+  display: none;
+  background-color: #ff6f3c;
+  height: 100%;
+  width: 2px;
+}
+@media (min-width: 35em) {
+  .blink-type {
+    display: inline;
+    opacity: 1;
+    animation: blink-animation 2s linear infinite;
+    -webkit-animation: blink-animation 2s linear infinite;
+  }
+}
+
+div.phone-case {
+  width: 100%;
+  height: 700px;
+  background-color: #434343;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+}
+@media (min-width: 60em) {
+  div.phone-case {
+    width: 400px;
+  }
+}
+
+div.phone-screen {
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  background-color: white;
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(28, 1fr);
+}
+div.phone-screen div.phone-header {
+  grid-column: 1/span -span;
+  grid-row: 1/span 1;
+  background-color: #081e24;
+  text-align: right;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  font-size: 0.8em;
+  color: white;
+}
+div.phone-screen div.phone-header .battery {
+  transform: rotate(-90deg);
+}
+div.phone-screen div.text-header {
+  grid-column: 1/span -span;
+  grid-row: 2/span 2;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0.5em;
+  border-bottom: solid 1px lightgray;
+}
+div.phone-screen div.text-header div:nth-child(1) {
+  grid-column: 1/span 1;
+  grid-row: 1/span 2;
+  align-self: center;
+}
+div.phone-screen div.text-header div:nth-child(2) {
+  grid-column: 2/span 3;
+  grid-row: 1/span 1;
+  justify-self: start;
+}
+div.phone-screen div.text-header div:nth-child(3) {
+  grid-column: 5/span 2;
+  grid-row: 1/span 2;
+  align-self: center;
+  justify-self: end;
+}
+div.phone-screen div.text-header div:nth-child(4) {
+  grid-column: 2/span 3;
+  grid-row: 2/span 1;
+  justify-self: start;
+}
+div.phone-screen div.messages {
+  grid-column: 1/span -span;
+  grid-row: 4/span 23;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 0.9em;
+  word-break: break-all;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+}
+div.phone-screen div.messages div {
+  max-width: 100%;
+  margin: 0 auto;
+}
+div.phone-screen div.messages div div {
+  width: fit-content;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 60%;
+}
+div.phone-screen div.text-footer {
+  grid-column: 1/span -span;
+  grid-row: 27/span 2;
+  border-top: solid 1px lightgray;
+  padding-top: 0.4em;
+}
+div.phone-screen div.text-footer .icon {
+  color: darkgray;
+}
+div.phone-screen div.text-footer input {
+  border: 1px solid darkgray;
+  padding: 0.5em;
+}
+div.phone-screen div.text-footer button {
+  border: none;
+  background: #218aff;
+  color: white;
+  padding: 0.5em;
+  border-radius: 25px;
+}
+div.phone-screen div.text-footer button:hover {
+  background-color: #3b97ff;
+}
+
+.icon i {
+  margin: 0 0.5rem;
+}
+
+.removed {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.received,
+.sent {
+  margin-bottom: 10px !important;
+  display: grid;
+  transition: transform 0.2s ease-out;
+}
+.received .delete-message,
+.sent .delete-message {
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  color: #ff6f3c;
+  background: transparent;
+  border: none;
+}
+.received div,
+.sent div {
+  padding: 0.8em;
+  border-radius: 25px;
+  display: inline-block;
+  max-width: 60%;
+}
+.received:hover,
+.sent:hover {
+  transform: translateY(-10%);
+  transition: transform 0.2s ease-in;
+}
+.received:hover .delete-message,
+.sent:hover .delete-message {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.received {
+  text-align: left;
+  grid-template-columns: 15px 2fr;
+  grid-template-rows: 0.4fr 15px 2fr;
+}
+.received .delete-message {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+}
+.received .receive-name {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  padding: 0.2em;
+  display: block;
+}
+.received .receivedMessage {
+  grid-column: 2/span 1;
+  grid-row: 2/span 2;
+  background-color: lightgray;
+  margin-left: 10px;
+}
+
+.sent {
+  text-align: right;
+  grid-template-columns: 2fr 15px;
+  grid-template-rows: 15px 2fr;
+}
+.sent .delete-message {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  left: 30%;
+  bottom: 20%;
+}
+.sent div {
+  grid-column: 1/span 1;
+  grid-row: 1/span 2;
+  justify-self: end;
+  text-align: left;
+  background-color: teal;
+  color: white;
+  margin-right: 0;
+}
+
+.convo-time {
+  font-size: 0.7em;
+  color: darkgray;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+  animation: fade-out 0.3s ease-out;
+}
+
+.options {
+  margin: 0;
+  padding: 0.5em;
+  background-color: #155263;
+  color: #ff9a3c;
+}
+@media (min-width: 35em) {
+  .options {
+    padding: 1em;
+  }
+}
+@media (min-width: 60em) {
+  .options .input-grid label {
+    justify-self: center;
+  }
+}
+.options form {
+  margin: 0.4em;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: none;
+  margin: 0.5em auto;
+  align-items: center;
+}
+.input-grid label {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.input-grid input {
+  grid-column: 2/span 3;
+  grid-row: 1/span 1;
+}
+
+.input-grid-other {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: none;
+  grid-gap: 5px;
+  margin: 0.5em auto;
+  align-items: center;
+}
+.input-grid-other label {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.input-grid-other input {
+  grid-column: 2/span 3;
+  grid-row: 1/span 1;
+}
+.input-grid-other button {
+  grid-column: 5/span 1;
+  grid-row: 1/span 1;
+}
+
+.warning {
+  color: white;
+  font-size: 0.8em;
+}
+
+.phone-num .warning {
+  text-align: left;
+}
+
+.fadeIn {
+  animation: fade-in 0.3s ease-in;
+}
+
+@media (min-width: 60em) {
+  .name-options {
+    text-align: right;
+  }
+}
+.name-options h4 {
+  text-align: left;
+}
+
+#singleName {
+  animation: fade-in 0.3s ease-in;
+}
+
+#optionalNames {
+  animation: fade-in 0.3s ease-in;
+  opacity: 1;
+}
+#optionalNames div {
+  animation: fade-in 0.3s ease-in;
+  margin: 0.3em auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: none;
+}
+#optionalNames div label {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  align-self: center;
+}
+#optionalNames div input {
+  grid-column: 2/span 3;
+  grid-row: 1/span 1;
+}
+#optionalNames .removed {
+  animation: fade-out 0.3s ease-out;
+  opacity: 0;
+}
+#optionalNames.removed {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/*# sourceMappingURL=main.css.map */
